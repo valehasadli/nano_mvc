@@ -60,7 +60,7 @@ class User extends Controller {
             $model->email       = $_POST['email'];
             $model->role        = $_POST['role'];
 
-            $model->photo       = time().$_FILES['photo']['name'];
+            $model->photo       = $_FILES['photo']['name'];
             $photoTmp           = $_FILES['photo']['tmp_name'];
             $photoSize          = $_FILES['photo']['size'];
             $photoType          = $_FILES['photo']['type'];
@@ -68,7 +68,6 @@ class User extends Controller {
             if($model->is_valid())
             {
                 $model->uploadFile($photoTmp, $model->photo);
-                $model->beforeSave();
                 $model->save();
                 header('location: ' . BaseUrl);
             } else

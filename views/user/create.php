@@ -40,7 +40,8 @@
         <br>
         <select name="role" class="form-control">
             <option selected="selected" value="0">User</option>
-            <option value="1">Admin</option>
+            <option value="1">EDITOR</option>
+            <option value="2">Admin</option>
         </select>
         <br>
         <div class="form-group">
